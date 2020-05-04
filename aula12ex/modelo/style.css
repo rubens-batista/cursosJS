@@ -1,0 +1,23 @@
+
+body{
+    font: normal 20pt Arial;
+    background-color: crimson;
+}
+section#container{
+    width: 960px;
+    height: 500px;
+    margin: 0px auto;
+    padding: 20px 20px;
+    background-color: white;
+    color: crimson;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.445);
+}
+section#conteudo{
+    text-align: left;
+}
+
+footer#rodape{
+    font-size: 14px;
+}

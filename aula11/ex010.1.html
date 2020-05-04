@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body{
+            font: normal 20pt Arial;
+            background-color: lavender;
+            color: white;
+        }
+        .container{
+            width: 930px;
+            height: 470px;
+            background-color: white;
+            color: rgb(146, 146, 161);
+            border-radius: 10px;
+            margin: 0px auto;
+            font-size: 14pt;
+            padding: 30px;
+        }
+        button.botao{
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 10px;
+            background-color: rgb(146, 146, 161);
+            color: white;
+            border:1px solid rgb(146, 146, 161);
+        }
+        button.botao:hover{
+            background-color: rgba(255, 255, 255, 0);
+            border: 1px solid rgb(146, 146, 161);
+            color: rgb(146, 146, 161);
+            transition: ease-in 0.2s;
+        }
+        div#res{
+            margin-top: 10px;
+            color: rgb(39, 39, 39);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nacionalidade</h1>
+        Qual o seu país?: <input type="text" name="txtc" id="txtc"><br>
+        <button type="botao" class="botao" onclick="verificar()">Verificar</button>
+        <div id="res">
+        </div>
+    </div>
+    <script>
+        function verificar(){
+            var txtc = window.document.querySelector('input#txtc')
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Seu país é ${txtc.value}.</p>`
+            if(txtc.value == 'Brasil'){
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
+            }else{
+                res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

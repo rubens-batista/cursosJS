@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições</title>
+    <style>
+        body{
+            font: normal 20pt Arial;
+            background-color: tomato;
+            color: white;
+        }
+        .container{
+            width: 930px;
+            height: 470px;
+            background-color: white;
+            color: tomato;
+            border-radius: 10px;
+            margin: 0px auto;
+            font-size: 14pt;
+            padding: 30px;
+        }
+        button.botao{
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 10px;
+            background-color: rgb(248, 51, 16);
+            color: white;
+            border:1px solid rgb(248, 51, 16);
+        }
+        button.botao:hover{
+            background-color: rgba(255, 255, 255, 0);
+            border: 1px solid rgb(248, 51, 16);
+            color: rgb(248, 51, 16);;
+            transition: ease-in 0.2s;
+        }
+        div#res{
+            margin-top: 10px;
+            color: rgb(39, 39, 39);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Multas</h1>
+        Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h<br>
+        <button type="button" class="botao" onclick="calcular()">Verificar</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            var txtvel = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtvel.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+            if(vel > 60){
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade.</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#area{
+            font: normal 15pt Arial;
+            background: rgb(112, 238, 129);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+    <!--<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> // MANEIRA POLUIADA NO HTML-->
+        Interaja...
+    </div>
+
+    <!--Javascript-->
+    <script>
+        var area = window.document.getElementById('area')
+        area.addEventListener('click', clicar) // Melhor maneira de chamar varios eventos dentro de um mesmo objeto
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+
+        function clicar(){
+            area.innerText = 'Clicou!'
+            area.style.background = 'rgb(231, 80, 80)'
+        }
+        function entrar(){
+            area.innerText = 'Entrou!'
+        }
+        function sair(){
+            area.innerText = 'Saiu!'
+            area.style.background = 'rgb(112, 238, 129)'
+        }
+    </script>
+</body>
+</html>
