@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite algo</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="txt">Digite seu nome:</label><br>
+        <input type="text" name="texto" id="txt"><br>
+        <button type="button" class="botao" onclick="verif()">Verificar</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function verif(){
+            //Pega todas variaveis
+            let text = window.document.querySelector('input#txt')
+            let res = window.document.querySelector('div#res')
+            //verifica o tipo, sem convenção
+            let tipo = typeof(text.value)
+            //Coloca em maiusculo e minusculo
+            let maior = text.value.toUpperCase()
+            let menor = text.value.toLowerCase()
+            //Exibi o resultado
+            res.innerHTML = `<p>Qual o tipo primitivo desse valor, sem convenção? é um ${tipo}</p>`
+            res.innerHTML += `<p>Seu nome em maiusculo é ${maior}</p>`
+            res.innerHTML += `<p>Seu nome em minusculo é ${menor}</p>`
+
+        }
+    </script>
+</body>
+</html>

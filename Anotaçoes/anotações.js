@@ -8,7 +8,7 @@
     var s = 'Javascript'
 
     window.alert('Modo antigo de concatenar em ' + s)
-    window.alert(`Modo novo de concatenar em ${s}`)
+    window.alert(`Modo ideal de concatenar em ${s}`)
 
     s.length // Quantos caracteres a string tem
     s.toUpperCase() // Tudo para 'MAIUSCULA'
