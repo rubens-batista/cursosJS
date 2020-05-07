@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite algo</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="num1">Uma distância em metros:</label><br>
+        <input type="number" name="num1" id="num1"><br>
+        <button type="button" class="botao" onclick="calcular()">Calcular</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            let num1 = window.document.querySelector('input#num1')
+            let res = window.document.querySelector('div#res')
+
+            let m = Number(num1.value)
+            let km = m / 1000
+            let hm = m / 100
+            let dam = m / 10
+            let dm = m * 10
+            let cm = m * 100
+            let mm = m * 1000
+
+            res.innerHTML = `A medida de ${m.toFixed(1)}m corresponde a:`
+            res.innerHTML += `<br>${km}km<br>${hm}hm<br>${dam}dam<br>${dm}dm<br>${cm}cm<br>${mm}mm`
+
+        }
+    </script>
+</body>
+</html>
