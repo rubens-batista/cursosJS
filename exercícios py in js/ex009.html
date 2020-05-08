@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="num">Digite um numero para ver sua tabuada:</label><br>
+        <input type="number" name="num" id="num"><br>
+        <button type="button" class="botao" onclick="tab()">Tabuada</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function tab(){
+            //Pega os valores
+            let num = window.document.querySelector('input#num')
+            let res = window.document.querySelector('div#res')
+            if(num.value.length == 0){
+                res.innerHTML = `[ERROR]. INSIRA UM NUMERO!`
+            }else{
+                res.innerHTML = ``
+                //Converte para number
+                let n = Number(num.value)
+                //faz a multiplicação em looping
+                let c = 1
+                while(c <= 10){
+                    let t = n * c
+                    res.innerHTML += `${n} x ${c} = ${t}<br>`
+                    c++
+                }
+            }
+        }
+    </script>
+</body>
+</html>

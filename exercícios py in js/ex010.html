@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversos de moedas</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="num">Quanto dinheiro você tem na carteira?</label><br>
+        <input type="number" name="num" id="num"><br>
+        <button type="button" class="botao" onclick="converter()">Converter</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function converter(){
+            let num = window.document.getElementById('num')
+            let res = window.document.getElementById('res')
+
+            let real = Number(num.value).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+            let dolar = (5.74).toLocaleString('en-US', {style: 'currency', currency: 'USD'})
+            let c = real / 5.74
+
+            res.innerHTML = `Com ${real} você pode comprar ${dolar}`
+        }
+    </script>
+</body>
+</html>
