@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversos de moedas</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="l_parede">Largura da parede:</label><br>
+        <input type="number" name="l-parede" id="l_parede"><br>
+        <label for="a_parede">Altura da parede:</label><br>
+        <input type="number" name="a-parede" id="a_parede"><br>
+        <button type="button" class="botao" onclick="parede()">Calcular</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function parede(){
+            $l_parede = document.querySelector('input#l_parede') 
+            $a_parede = document.querySelector('input#a_parede')
+            $res = document.querySelector('div#res')
+
+            //Considerando que a cada 2mt quadrados de parede, precisa de 1lt de tinta
+            
+            //Convertendo valores
+            $lparede = Number($l_parede.value)
+            $aparede = Number($a_parede.value)
+            //Calculando metros quadrados
+            $metros = $lparede * $aparede
+            //
+            $litros = $metros / 2
+            res.innerHTML = `<p>Sua parede tem a dimensão de ${$lparede}x${$aparede} e sua área é de ${$metros}m².</p>`
+            res.innerHTML += `<p>Para pintar essa parede, você precisará de ${$litros}l de tinta.</p>`
+
+        }
+    </script>
+</body>
+</html>
