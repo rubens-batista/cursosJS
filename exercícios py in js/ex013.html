@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento de Salário</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="preco">Qual é o salário do Funcionário? </label><br>
+        <input type="number" name="valor" id="preco"><br>
+        <button type="button" class="botao" onclick="aumento()">Calcular</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function aumento(){
+            $preco = document.querySelector('input#preco')
+            $res = document.getElementById('res')
+
+            $valor = Number(preco.value)
+
+            $novo_salario = $valor + ($valor * 15 / 100)
+
+            res.innerHTML = `Um funcionário que ganhava ${$valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}, com 15% de aumento, passa a receber ${$novo_salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>
