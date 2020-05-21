@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alugando Carro</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="rent">Quantos dias alugados?</label><br>
+        <input type="number" name="car_rent" id="rent"><br>
+        <label for="kmtot">Quantos Km rodados?</label><br>
+        <input type="number" name="rodados" id="kmtot"><br>
+        <button type="button" class="botao" onclick="calcular()">Calcular</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            $rent = document.getElementById('rent')
+            $kmtot = document.getElementById('kmtot')
+            $res = document.getElementById('res')
+
+            $r = Number($rent.value)
+            $km = Number($kmtot.value)
+
+            $dia = $r * 60
+            $vkm = $km * 0.15
+
+            $total = $dia + $vkm
+
+            res.innerHTML = `O total a pagar é de ${$total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>

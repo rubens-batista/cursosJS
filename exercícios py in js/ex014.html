@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius para Fahrenheit</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="temp">Informe a temperatura em &#8451;:</label><br>
+        <input type="number" name="celsius" id="temp"><br>
+        <button type="button" class="botao" onclick="converter()">Converter</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function converter(){
+            $temp = document.querySelector('input#temp')
+            $res = document.querySelector('div#res')
+
+            $c = Number($temp.value)
+            $f = ($c * 9 / 5) + 32
+
+            res.innerHTML = `A temperatura de ${$c}&#8451; corresponde a ${$f}&#8457;!`
+
+        }
+    </script>
+</body>
+</html>
