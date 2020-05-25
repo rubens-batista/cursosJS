@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catetos e Hipotenusa</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="cateto_op">Comprimento do cateto oposto:</label><br>
+        <input type="number" name="oposto" id="cateto_op"><br>
+        <label for="cateto_ad">Comprimento do cateto adjacente:</label><br>
+        <input type="number" name="adjacente" id="cateto_ad"><br>
+        <button type="button" class="botao" onclick="calcular()">Calcular</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function calcular(){
+            $cateto_op = document.getElementById('cateto_op')
+            $cateto_ad = document.getElementById('cateto_ad')
+            $res = document.getElementById('red')
+
+            $op = Number($cateto_op.value)
+            $ad = Number($cateto_ad.value)
+
+            $h = Math.hypot($op, $ad)
+
+            res.innerHTML = `A hipotenusa vai medir ${$h.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

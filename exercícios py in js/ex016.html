@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebrando Números</title>
+</head>
+<style>
+    div.conteudo{
+        width: 960px;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: crimson;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+    }
+    input{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    button{
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <div class="conteudo">
+        <label for="num">Digite um valor:</label><br>
+        <input type="number" name="num" id="num"><br>
+        <button type="button" class="botao" onclick="porcao()">Verificar</button>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function porcao(){
+            $num = document.querySelector('input#num')
+            $res = document.querySelector('div#res')
+
+            $a = Number($num.value)
+
+            $x = Math.round($a)
+
+            res.innerHTML = `O valor digitado foi ${$a} e a sua porção inteira é ${$x}`
+        }
+    </script>
+</body>
+</html>
